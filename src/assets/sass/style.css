@@ -5289,7 +5289,7 @@ input:checked + .checkbox-slider:before {
     page-break-after: avoid; } }
 
 .ReactTable {
-  border-color: !important; }
+  border-color: #92a8d1 }
   .ReactTable .rt-noData {
     z-index: 0 !important; }
   .ReactTable .rt-table .rt-tbody .rt-tr {

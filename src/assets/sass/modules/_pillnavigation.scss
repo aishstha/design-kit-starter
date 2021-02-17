@@ -1,0 +1,23 @@
+.Pill-navigation {
+  @include e(link) {
+    border: 1px solid getAppColor(pilltab-bg);
+    color: getAppColor(pilltab-bg);
+    background-color: white;
+    padding: 7px 20px;
+    &:hover {
+      background-color: lighten(getAppColor(pilltab-bg), 15%);
+      color: getAppColor(pilltab-bg);
+    }
+    @include m(first) {
+      border-radius: 4px 0 0 4px;
+    }
+    @include m(end) {
+      border-radius: 0 4px 4px 0;
+    }
+    @include m(active) {
+      color: white;
+      background-color: getAppColor(pilltab-bg);
+    }
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,65 @@
+.DropdownMenu--context-style {
+  margin: -0.4rem -0.8rem;
+}
+.Context-nodes {
+  border-bottom: 1px solid rgba(getAppColor(table-head), 0.5);
+  &:last-child {
+    border-bottom: 0px !important;
+  }
+  .btn {
+    min-width: 136px;
+    width: 100%;
+    color: getAppColor(light-body-font);
+    border: none;
+    text-align: left !important;
+    padding: 12px 20px;
+    &:hover {
+      background-color: darken(white, 5%);
+    }
+  }
+}
+
+.context-drop-menu-wrap {
+  position: relative;
+  .context-drop-menu {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    width: 265px;
+    border: 1px solid getAppColor(pilltab-bg);
+    background-color: $white;
+    padding: 20px;
+    right: 0;
+    top: 120%;
+    &.visible {
+      display: block;
+    }
+  }
+}
+.accordion {
+  .accordion__title {
+    font-size: 14px;
+    cursor: pointer;
+    padding: 8px 15px 8px 8px;
+    position: relative;
+    background-color: getAppColor(table-head-bg);
+  }
+  .accordion__body {
+    padding: 2px 10px;
+    font-size: 12px;
+    &:nth-child(2) {
+      padding-top: 10px;
+    }
+    &:last-child {
+      padding-bottom: 10px;
+    }
+  }
+  .accordion__arrow {
+    right: 10px;
+    width: 17px;
+    &:after,
+    &:before {
+      width: 6px;
+    }
+  }
+}

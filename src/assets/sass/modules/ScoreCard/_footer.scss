@@ -1,0 +1,13 @@
+.Footer {
+  margin-bottom: 20px;
+  @include e(wrap) {
+    @include e(link) {
+      font-size: 12px;
+      margin: 0 15px;
+      color: black;
+      @include m(no-margin) {
+        margin-right: 0px;
+      }
+    }
+  }
+}

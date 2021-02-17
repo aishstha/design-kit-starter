@@ -1,0 +1,105 @@
+.Graph {
+  margin-bottom: 12px;
+  @include m(no-margin-bottom) {
+    margin-bottom: 0;
+  }
+  @include e(label) {
+    font-size: 14px;
+    margin-right: 25px;
+    min-width: 15px;
+    flex-shrink: 0;
+    @include m(bold) {
+      font-family: $font-bold;
+    }
+    @include m(small-margin) {
+      margin-right: 10px;
+    }
+  }
+  @include e(bar) {
+    margin-right: 10px;
+    flex-basis: 90%;
+    @include e(block) {
+      position: relative;
+      @include e(count) {
+        min-width: 40px;
+        position: absolute;
+        right: 0;
+        transform: translateX(120%);
+        @include m(bold) {
+          font-family: $font-bold;
+        }
+      }
+      height: 26px;
+      background-color: getAppColor(pilltab-bg);
+      display: block;
+      @include m(blue) {
+        background-color: getAppColor(graph-blue);
+      }
+      @include m(orange) {
+        background-color: getAppColor(orange);
+      }
+      @include m(medium) {
+        height: 20px;
+      }
+      @include m(small) {
+        height: 14px;
+      }
+    }
+  }
+  @include e(bar-percentage) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    margin-right: 20px;
+    @include e(col) {
+      @include m(medium) {
+        height: 20px;
+      }
+      @include m(small) {
+        height: 14px;
+      }
+      @include m(faded) {
+        opacity: 0.5;
+      }
+      @include m(passed) {
+        background-color: getAppColor(graph-blue);
+      }
+      @include m(nearly) {
+        background-color: getAppColor(graph-lorange);
+        margin: 0 6px;
+      }
+      @include m(failed) {
+        background-color: getAppColor(orange);
+      }
+    }
+  }
+}
+
+@include mqmax(420, true) {
+  .Graph {
+    flex-wrap: wrap;
+    @include e(label) {
+      flex-basis: 100%;
+      text-align: left !important;
+      margin-bottom: 5px;
+    }
+    @include e(bar) {
+      height: 26px;
+      margin-right: 10px;
+      background-color: getAppColor(pilltab-bg);
+      @include m(blue) {
+        background-color: getAppColor(graph-blue);
+      }
+      @include m(orange) {
+        background-color: getAppColor(orange);
+      }
+      @include m(medium) {
+        height: 21px;
+      }
+      @include m(small) {
+        height: 14px;
+      }
+    }
+  }
+}

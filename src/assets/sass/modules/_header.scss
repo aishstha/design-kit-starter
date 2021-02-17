@@ -1,0 +1,71 @@
+$header-height: 55px;
+.Header {
+  border-bottom: 1px solid getAppColor(border-color);
+  @include e(row) {
+    height: $header-height;
+    @include e(logo) {
+      margin-right: 25px;
+      img {
+        max-width: 130px;
+      }
+    }
+    @include e(user-profile) {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.Nav {
+  @include e(menu-nodes) {
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 85%;
+      height: 0px;
+      background-color: getAppColor(blue-accent);
+      left: 10px;
+      bottom: 0;
+    }
+    &:hover {
+      &:after {
+        content: '';
+        position: absolute;
+        width: 85%;
+        height: 2px;
+        background-color: getAppColor(blue-accent);
+        left: 10px;
+        bottom: 0;
+      }
+    }
+    a {
+      font-size: 13px;
+      color: getAppColor(menu-inactive);
+      height: $header-height;
+      display: flex;
+      align-items: center;
+      padding: 0 25px;
+    }
+    @include e(active) {
+      font-family: $font-bold;
+      color: getAppColor(body-font) !important;
+      &:after {
+        content: '';
+        position: absolute;
+        width: 85%;
+        height: 2px;
+        background-color: getAppColor(blue-accent);
+        left: 10px;
+        bottom: 0;
+      }
+    }
+  }
+}

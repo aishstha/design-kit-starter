@@ -1,0 +1,46 @@
+.Banner {
+  height: 188px;
+  width: 100%;
+  background-color: getAppColor(banner-bg);
+  padding: 30px 20px;
+  @include e(content) {
+    @include e(logo) {
+      width: 80px;
+      height: 70px;
+      background-color: darken(getAppColor(banner-bg), 5%);
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    @include e(detail) {
+      color: white;
+      @include e(title) {
+        font-family: $font-bold;
+        font-size: 28px;
+      }
+      @include e(sub-title) {
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+@include mqmax(420, true) {
+  .Banner {
+    padding: 30px 10px;
+    @include e(content) {
+      align-items: flex-start !important;
+      @include e(logo) {
+        width: 60px;
+        height: 55px;
+      }
+      @include e(detail) {
+        @include e(title) {
+          font-size: 20px;
+        }
+        @include e(sub-title) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

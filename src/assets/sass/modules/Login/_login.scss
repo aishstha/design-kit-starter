@@ -1,0 +1,52 @@
+.Login {
+  height: 100vh;
+  @include e(box) {
+    width: 350px;
+    @include e(companylogo) {
+      max-width: 130px;
+      margin-bottom: 30px;
+    }
+    @include e(mainbox) {
+      @extend %box-shadow;
+      border: 1px solid getAppColor(light-border);
+      width: 100%;
+      padding: 30px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.Google__btn {
+  height: 40px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: #ffffff;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+  color: rgba(0, 0, 0, 0.54);
+  font-family: Roboto;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 0.22px;
+  border: none;
+  outline: none;
+  transition: background-color 0.218s, border-color 0.218s, box-shadow 0.218s;
+  @include e(icon) {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 11px 21px 11px 11px;
+    background-image: url(../images/google_logo.svg);
+    background-size: 100%;
+  }
+  &:hover {
+    box-shadow: 0 0 3px 3px rgba(66, 133, 244, 0.3);
+  }
+  &:active {
+    background-color: #eee;
+    color: #6d6d6d;
+  }
+}
+.Sign-up-prompt {
+  font-size: 12px;
+}

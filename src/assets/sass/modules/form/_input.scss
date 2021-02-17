@@ -1,0 +1,86 @@
+.form-group {
+  position: relative;
+  margin-bottom: 15px;
+  @include e(icon) {
+    position: relative;
+    .form-icon {
+      right: 0;
+      top: 50%;
+      position: absolute;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 100%;
+      background-color: transparent;
+      border-color: transparent;
+      cursor: pointer;
+      line-height: 1;
+      color: getAppColor(pilltab-bg);
+      &:focus {
+        outline: none;
+      }
+      &.uploader {
+        color: lighten(getAppColor(body-font), 30%);
+        width: 80px;
+        display: flex;
+        align-items: center;
+        .label {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  @include e(label) {
+    font-size: 14px;
+    color: getAppColor(body-font);
+    margin-bottom: 5px;
+    @include m(block) {
+      display: block;
+    }
+    @include m(nomargin) {
+      margin-bottom: 0px;
+    }
+    @include e(link) {
+      font-size: 12px;
+    }
+  }
+  @include e(note) {
+    font-size: 12px;
+    color: getAppColor(light-grey);
+    margin-bottom: 10px;
+  }
+  @include e(control) {
+    height: 41px;
+    border: 1px solid getAppColor(pilltab-bg);
+    border-radius: 3px;
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    font-family: $font-regular;
+    &:focus {
+      outline: none;
+      border-color: getAppColor(blue-accent);
+    }
+    &::placeholder {
+      font-size: 14px;
+      color: getAppColor(light-grey);
+    }
+    .form-group__icon & {
+      padding-right: 40px;
+    }
+    .has-error & {
+      border-color: $red;
+    }
+    @include m(textarea) {
+      height: auto;
+    }
+  }
+  &.has-error {
+    .Editor {
+      border-color: $red;
+    }
+  }
+  @include e(validation-true) {
+    color: $red;
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,39 @@
+.Overall-card {
+  background-color: white;
+  box-shadow: 0 2px 26px 0 rgba(0, 0, 0, 0.11);
+  margin-top: -60px;
+  margin-bottom: 15px;
+  @include m(columns) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.Icon-media {
+  margin-bottom: 20px;
+  @include m(nomargin) {
+    margin-bottom: 0px;
+  }
+  @include e(icon) {
+    color: getAppColor(pilltab-bg);
+    font-size: 50px;
+    margin-right: 20px;
+  }
+  @include e(number-details) {
+    @include e(count) {
+      color: getAppColor(body-font);
+      font-size: 33px;
+    }
+    @include e(type) {
+      color: getAppColor(menu-inactive);
+    }
+  }
+}
+
+.Criteria-graph {
+  @include e(title) {
+    color: getAppColor(menu-inactive);
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+}

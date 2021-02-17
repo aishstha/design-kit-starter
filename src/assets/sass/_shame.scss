@@ -1,0 +1,487 @@
+// ==========================================================================
+// Shame
+// If any code was written hastily to meet deadlines or in a hackish way then those
+// codes should be written in _shame.scss. Documentation of hack codes is encouraged.
+// Cleaning up the code in _shame.scss should be done at spare time. Find out whose code it is by
+// using: $ git blame _shame.scss
+// ==========================================================================
+
+.ReactTable {
+  border-color: !important;
+  .rt-noData {
+    z-index: 0 !important;
+  }
+  .rt-table {
+    .rt-tbody {
+      .rt-tr {
+        align-items: center;
+      }
+      .rt-td {
+        border-right: 0px !important;
+        border-color: #eff2f7 !important;
+        padding: 10px 15px !important;
+        font-size: 14px;
+      }
+    }
+    .rt-thead {
+      box-shadow: none !important;
+      border-bottom: 1px solid #eff2f7;
+      .rt-th {
+        background-color: #f5f8fa;
+        font-size: 12px;
+        padding: 15px !important;
+        font-weight: bold;
+        border-color: #eff2f7 !important;
+        text-transform: uppercase;
+        color: #b0c1d4;
+        letter-spacing: 1px;
+        border-right: 0px !important;
+        text-align: left;
+        // border-right-width: 2px;
+        position: relative;
+        &.no-sort {
+          &:before,
+          &:after {
+            display: none;
+          }
+        }
+        &:before,
+        &:after {
+          font-family: 'ed-fonts' !important;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          position: absolute;
+          left: 2px;
+          top: 48%;
+          font-size: 9px;
+        }
+        &.-sort-asc,
+        &.-sort-desc {
+          box-shadow: none;
+        }
+        &.-sort-asc {
+          &:after {
+            display: none;
+          }
+        }
+        &.-sort-desc {
+          &:before {
+            display: none;
+          }
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+      .arrow-indicator {
+        &:before {
+          content: '\ea5c';
+          transform: translateY(-8px);
+        }
+        &:after {
+          content: '\ea5d';
+        }
+      }
+    }
+  }
+  .pagination-bottom {
+    // margin-top: 25px;
+    .-pagination {
+      box-shadow: none;
+      border-top: 1px solid #eff2f7;
+    }
+  }
+}
+.fix-height {
+  height: 14px;
+}
+
+.design-kit {
+  font-size: 50px;
+  border-bottom: 1px solid getAppColor(border-color);
+  padding: 30px 0;
+}
+.kit-title {
+  padding: 20px 0;
+  h3 {
+    font-size: 20px;
+  }
+}
+.editor {
+  border: 1px solid getAppColor(border-color);
+}
+.kit-block {
+  border-bottom: 2px solid getAppColor(body-font);
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+.cron-builder {
+  background-color: getAppColor(table-head-bg) !important;
+  @include e(tab) {
+    background-color: getAppColor(pilltab-bg);
+    background-image: none !important;
+    font-weight: normal !important;
+    color: getAppColor(body-font) !important;
+    &:focus {
+      outline: none;
+    }
+    @include m(active) {
+    }
+  }
+  @include e(label) {
+    color: getAppColor(body-font) !important;
+  }
+  @include e(pretty-expression) {
+    color: getAppColor(body-font) !important;
+  }
+  @include e(action) {
+    background-color: getAppColor(blue-accent);
+    background-image: none !important;
+    padding: 0 15px;
+    color: white !important;
+    border-radius: 4px;
+    &:hover {
+      background-color: darken(getAppColor(blue-accent), 10%);
+      cursor: pointer;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  @include e(link) {
+    select {
+      background-color: #fff;
+      border-color: #d9d9d9 #ccc #b3b3b3;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      color: #333;
+      cursor: default;
+      display: table;
+      border-spacing: 0;
+      border-collapse: separate;
+      height: 36px;
+      outline: none;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+  }
+}
+.cron-builder__pretty-expression {
+  color: black;
+}
+
+.issues-found {
+  color: $red;
+}
+.has-export {
+  color: getAppColor(blue-accent);
+}
+
+.msdf-timepicker {
+  box-sizing: border-box;
+}
+.msdf-timepicker * {
+  box-sizing: border-box;
+}
+
+.react-datepicker-component .react-datepicker-input {
+  height: 41px !important;
+  border: 1px solid #c0ccda !important;
+  width: 250px !important;
+  border-radius: 3px !important;
+  width: 100%;
+  padding: 10px 12px !important;
+  font-size: 14px !important;
+  font-family: 'proximanova-regular';
+  background: none !important;
+  &:hover {
+    background: none !important;
+    background-image: none !important;
+  }
+}
+
+.msdf-timepicker-input {
+  height: 41px;
+  border: 1px solid #c0ccda;
+  border-radius: 3px;
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: 'proximanova-regular';
+}
+
+.msdf-timepicker-input[disabled] {
+  color: #ccc;
+  background: #f7f7f7;
+  cursor: not-allowed;
+}
+.msdf-timepicker-panel {
+  z-index: 1070;
+  width: 170px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.msdf-timepicker-panel * {
+  box-sizing: border-box;
+}
+.msdf-timepicker-panel-inner {
+  top: 33px;
+  width: 224px;
+  display: inline-block;
+  position: relative;
+  outline: none;
+  list-style: none;
+  font-size: 12px;
+  text-align: left;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px #ccc;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  line-height: 1.5;
+}
+.msdf-timepicker-panel-narrow {
+  max-width: 113px;
+}
+.msdf-timepicker-panel-input {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  cursor: auto;
+  line-height: 1.5;
+  outline: 0;
+  border: 1px solid transparent;
+}
+.msdf-timepicker-panel-input-wrap {
+  display: none;
+}
+
+.msdf-timepicker-panel-input-invalid {
+  border-color: red;
+}
+
+.msdf-timepicker-panel-clear-btn {
+  position: absolute;
+  right: 6px;
+  cursor: pointer;
+  overflow: hidden;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  top: 6px;
+  margin: 0;
+}
+
+.msdf-timepicker-panel-clear-btn-icon:after {
+  content: 'x';
+  font-size: 12px;
+  font-style: normal;
+  color: #aaa;
+  display: inline-block;
+  line-height: 1;
+  width: 20px;
+  transition: color 0.3s ease;
+}
+
+.msdf-timepicker-panel-clear-btn-icon:hover:after {
+  color: #666;
+}
+.msdf-timepicker-panel-select {
+  float: left;
+  font-size: 12px;
+  border: 1px solid #e9e9e9;
+  border-width: 0 1px;
+  margin-left: -1px;
+  box-sizing: border-box;
+  width: 56px;
+  max-height: 144px;
+  overflow-y: auto;
+  position: relative;
+}
+.msdf-timepicker-panel-select-active {
+  overflow-y: auto;
+}
+.msdf-timepicker-panel-select:first-child {
+  width: 112px;
+  overflow-x: hidden;
+  border-left: 0;
+  margin-left: 0;
+}
+.msdf-timepicker-panel-select:last-child {
+  width: 111px;
+  overflow-x: hidden;
+  border-right: 0;
+}
+.msdf-timepicker-panel-select ul {
+  list-style: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.msdf-timepicker-panel-select li {
+  list-style: none;
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0 0 0 16px;
+  width: 100%;
+  height: 24px;
+  line-height: 24px;
+  text-align: left;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.msdf-timepicker-panel-select li:hover {
+  background: #edfaff;
+}
+li.msdf-timepicker-panel-select-option-selected {
+  background: #f7f7f7;
+  font-weight: bold;
+}
+li.msdf-timepicker-panel-select-option-disabled {
+  color: #ccc;
+}
+li.msdf-timepicker-panel-select-option-disabled:hover {
+  background: transparent;
+  cursor: not-allowed;
+}
+
+.pagination-bottom {
+  .-pagination {
+    padding: 15px !important;
+    .-btn {
+      max-height: 30px;
+    }
+    button {
+      width: 80px !important;
+      font-size: 12px !important;
+      background-color: transparent !important;
+      color: getAppColor(menu-inactive) !important;
+      border: 1px solid getAppColor(pilltab-bg) !important;
+    }
+    .-previous {
+      order: 1;
+      margin-right: 15px;
+      flex: 0 !important;
+    }
+    .-center {
+      order: 3;
+      flex: 1 !important;
+      justify-content: flex-end !important;
+      .-totalPages {
+        margin-left: 15px;
+        font-weight: bold;
+      }
+      .-pageInfo {
+        margin: 0 38% 0 0 !important;
+        font-size: 12px !important;
+        color: getAppColor(menu-inactive) !important;
+        .-pageJump {
+          input {
+            margin: 0 10px !important;
+            font-weight: bold;
+            min-height: 30px;
+            color: getAppColor(menu-inactive) !important;
+          }
+        }
+      }
+      .select-wrap {
+        margin: 0 !important;
+        select {
+          padding: 6px !important;
+          width: 80px !important;
+          font-size: 12px !important;
+          background-color: transparent !important;
+          border: 1px solid getAppColor(pilltab-bg) !important;
+          // -webkit-appearance: none;
+          height: 30px !important;
+          color: getAppColor(menu-inactive) !important;
+          border-radius: 2px !important;
+          option {
+          }
+        }
+      }
+    }
+    .-next {
+      order: 2;
+      flex: 0 !important;
+    }
+  }
+}
+
+.cron-readable {
+  white-space: pre-line !important;
+}
+.line {
+  position: relative;
+}
+
+.line::before {
+  content: attr(data-line-number);
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.5;
+}
+
+.line-text {
+  margin-left: 2em;
+}
+.RangeExample {
+  margin-top: 15px;
+  padding: 0px;
+  border: 1px solid getAppColor(pilltab-bg);
+  border-radius: 3px;
+  padding: 15px;
+  .range-result {
+    border-bottom: 1px solid getAppColor(pilltab-bg);
+    padding-bottom: 10px;
+  }
+}
+
+.Selectable .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
+  background-color: #f0f8ff !important;
+  color: #4a90e2;
+}
+.Selectable .DayPicker-Day {
+  border-radius: 0 !important;
+}
+.Selectable .DayPicker-Day--start {
+  border-top-left-radius: 50% !important;
+  border-bottom-left-radius: 50% !important;
+}
+.Selectable .DayPicker-Day--end {
+  border-top-right-radius: 50% !important;
+  border-bottom-right-radius: 50% !important;
+}
+.iziToast-title {
+  text-transform: capitalize;
+}
+
+.select-error {
+  & > div {
+    border-color: $red;
+  }
+}
+.custom-explore-table {
+  .ReactTable {
+    .rt-table {
+      .rt-tbody .rt-td {
+        padding: 6px 15px !important;
+      }
+      .rt-thead .rt-th {
+        padding: 8px 15px !important;
+      }
+    }
+  }
+}

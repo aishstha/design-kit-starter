@@ -1,0 +1,9 @@
+.Table-codeLibrary {
+  color: getAppColor(menu-inactive);
+  @include e(icon) {
+    font-size: 25px;
+    color: getAppColor(blue-accent);
+  }
+}
+.Tab-action {
+}

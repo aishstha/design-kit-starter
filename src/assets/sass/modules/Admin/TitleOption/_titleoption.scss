@@ -1,0 +1,11 @@
+.Title-option-row {
+  @include e(left) {
+    @include e(title) {
+      .Filter-trigger {
+        color: getAppColor(menu-inactive);
+        font-size: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+}

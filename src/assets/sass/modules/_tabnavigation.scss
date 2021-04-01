@@ -1,0 +1,16 @@
+.TabNav {
+  border-top: 1px solid getAppColor(border-color);
+  border-bottom: 1px solid getAppColor(border-color);
+  @include e(menu-nodes) {
+    padding: 14px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    color: getAppColor(body-font);
+    &:hover {
+      color: darken(getAppColor(blue-accent), 20%);
+    }
+    @include m(active) {
+      color: getAppColor(blue-accent);
+    }
+  }
+}

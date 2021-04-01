@@ -1,0 +1,14 @@
+.page-title {
+  font-size: 28px;
+  color: getAppColor(body-font);
+  @include m(small) {
+    font-size: 24px;
+  }
+  @include m(xsmall) {
+    font-size: 20px;
+  }
+  @include m(bordered) {
+    border-bottom: 1px solid getAppColor(border-color);
+    padding-bottom: 10px;
+  }
+}

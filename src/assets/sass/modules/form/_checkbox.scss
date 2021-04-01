@@ -1,0 +1,69 @@
+[type='checkbox']:checked,
+[type='checkbox']:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+[type='checkbox']:checked + label,
+[type='checkbox']:not(:checked) + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+  color: #666;
+}
+[type='checkbox']:checked + label:before,
+[type='checkbox']:not(:checked) + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid getAppColor(pilltab-bg);
+  border-radius: 2px;
+}
+[type='checkbox']:checked + label:before {
+  background: getAppColor(blue-accent);
+}
+[type='checkbox']:checked + label:after,
+[type='checkbox']:not(:checked) + label:after {
+  content: '\e9ed';
+  font-family: 'ed-fonts' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $white;
+  position: absolute;
+  font-size: 24px;
+  left: -3px;
+  top: -3px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+[type='checkbox']:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+[type='checkbox']:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+[type='checkbox']:checked + label:before {
+  border: 1px solid getAppColor(blue-accent);
+}
+[type='checkbox']:not(:checked) + label {
+  color: getAppColor(menu-inactive);
+}
+[type='checkbox']:checked + label {
+  color: getAppColor(body-font);
+}

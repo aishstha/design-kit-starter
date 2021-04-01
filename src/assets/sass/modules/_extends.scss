@@ -1,0 +1,13 @@
+// ==========================================================================
+// Extends
+// Placeholders used for the module partials are defined here.
+// Example:
+// %input {border: 0; border-bottom: 1px solid black;}
+// The placeholder defined may be used in "_forms.scss" as:
+// input__material--left {@extend %input; float: left;
+//   .input__material--right {@extend %input; float: right;}
+// }
+// ==========================================================================
+%box-shadow {
+  box-shadow: 0 2px 4px 0 rgba(227, 227, 227, 0.5);
+}

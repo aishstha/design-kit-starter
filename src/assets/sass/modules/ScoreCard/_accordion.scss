@@ -1,0 +1,85 @@
+.accordion {
+  border: 1px solid getAppColor(pilltab-bg) !important;
+  border-right: 0px !important;
+  border-left: 0px !important;
+  .accordion__item + .accordion__item {
+    border-top: 1px solid getAppColor(pilltab-bg) !important;
+  }
+  .accordion__title {
+    padding: 16px 18px;
+    background-color: transparent;
+    .Graph__label {
+      position: relative;
+      i {
+        position: absolute;
+        right: -17px;
+        top: 50%;
+        color: getAppColor(pilltab-bg);
+        font-size: 10px;
+        transform: translateY(-50%) rotateZ(180deg);
+        transform-origin: center center;
+      }
+      a {
+        position: relative;
+      }
+    }
+    &[aria-expanded='true'] {
+      .Graph__label {
+        i {
+          display: block;
+          transform: translateY(-50%) rotateZ(0deg);
+        }
+      }
+    }
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      background-color: getAppColor(accordion-faded);
+    }
+  }
+  .accordion-contents {
+    .Graph {
+      flex-basis: 90%;
+    }
+    &:last-child {
+      .Graph {
+        margin-bottom: 0px;
+      }
+    }
+  }
+  .view-details {
+    font-size: 12px;
+    a {
+      color: getAppColor(pilltab-bg);
+      margin-left: 18px;
+    }
+  }
+  .accordion__body {
+    padding-top: 10px;
+  }
+}
+
+@include mqmax(420, true) {
+  .accordion {
+    .accordion__title {
+      .view-details {
+        a {
+          text-align: left;
+          position: relative;
+          i {
+            position: absolute;
+            left: -20px;
+            display: none;
+          }
+        }
+      }
+    }
+    .accordion-contents {
+      align-items: flex-start;
+      .Graph {
+        flex-basis: 65%;
+      }
+    }
+  }
+}

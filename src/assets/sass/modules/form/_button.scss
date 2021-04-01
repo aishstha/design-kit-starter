@@ -1,0 +1,92 @@
+@mixin buttonMaker(
+  $padding: 7px 15px,
+  $fontSize: 12px,
+  $textColor: $white,
+  $borderRadius: 2px,
+  $borderWidth: 1px,
+  $borderStyle: solid
+) {
+  padding: $padding;
+  font-size: $fontSize;
+  color: $textColor;
+  border-radius: $borderRadius;
+  outline: none;
+  border-width: $borderWidth;
+  border-style: $borderStyle;
+  cursor: pointer;
+  min-height: 32px;
+}
+@mixin buttonColor($color, $outlined: false) {
+  border-color: getAppColor($color);
+  @if $outlined {
+    color: getAppColor($color);
+    background-color: transparent;
+  } @else {
+    background-color: getAppColor($color);
+  }
+  &:hover {
+    background-color: darken(getAppColor($color), 7%);
+    border-color: darken(getAppColor($color), 7%);
+    color: white;
+  }
+}
+.btn {
+  @include buttonMaker;
+  @include m(plain) {
+    border: none;
+    background: transparent;
+    color: getAppColor(table-head);
+    @include m(md) {
+      font-size: 14px;
+    }
+    &:hover {
+      color: darken(getAppColor(table-head), 10%);
+    }
+  }
+  @include m(grey) {
+    @include buttonColor(button-grey);
+    color: getAppColor(table-head);
+    @include m(outline) {
+      @include buttonColor(menu-inactive, true);
+    }
+  }
+  @include m(green) {
+    @include buttonColor(green-accent);
+    @include m(outline) {
+      @include buttonColor(green-accent, true);
+    }
+  }
+  @include m(blue) {
+    @include buttonColor(blue-accent);
+    @include m(outline) {
+      @include buttonColor(blue-accent, true);
+    }
+  }
+  @include m(red) {
+    @include buttonColor(danger);
+    @include m(outline) {
+      @include buttonColor(danger, true);
+    }
+  }
+  @include m(blue-active) {
+    &.active {
+      background-color: getAppColor(blue-accent);
+      border: 1px solid getAppColor(blue-accent);
+      color: white;
+    }
+  }
+  @include m(block) {
+    width: 100%;
+  }
+  @include m(icon) {
+    display: inline-flex;
+    align-items: center;
+  }
+  @include e(icon) {
+    font-weight: bold !important;
+  }
+  @include m(lg) {
+    padding: 11px 15px;
+    font-size: 15px;
+  }
+}
